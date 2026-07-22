@@ -3,118 +3,194 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07090f">
 <title>Financial Command Center — Founder Roadmap</title>
 <style>
-:root{--bg:#07111d;--panel:#0d1d2d;--panel2:#11283c;--text:#edf7ff;--muted:#9fb4c7;--line:#234057;--accent:#43d8c8;--blue:#4ba5ff;--good:#4fd481;--warn:#f2c75c;--r:18px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 15% 0,rgba(67,216,200,.15),transparent 28%),linear-gradient(180deg,#07111d,#091625);color:var(--text);font:16px/1.55 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
-.layout{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
-aside{position:sticky;top:0;height:100vh;padding:24px 18px;background:rgba(4,12,21,.86);border-right:1px solid var(--line);backdrop-filter:blur(14px)}
-.brand{display:flex;align-items:center;gap:12px;margin-bottom:24px}.logo{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;font-weight:900;color:#031316;background:linear-gradient(135deg,var(--accent),var(--blue))}
-.brand small{display:block;color:var(--muted)}nav{display:grid;gap:5px}nav a{color:var(--muted);text-decoration:none;padding:9px 10px;border-radius:10px}nav a:hover{background:#10263a;color:var(--text)}
-main{padding:34px clamp(18px,4vw,56px) 70px;min-width:0}.hero,.card{border:1px solid var(--line);background:rgba(13,29,45,.9);border-radius:var(--r)}
-.hero{padding:clamp(28px,5vw,54px);background:linear-gradient(145deg,rgba(19,47,69,.95),rgba(9,24,39,.96))}
-.eyebrow{color:var(--accent);font-size:.76rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}h1{font-size:clamp(2.4rem,5vw,4.8rem);line-height:.98;letter-spacing:-.05em;margin:14px 0}h2{margin:0;font-size:clamp(1.45rem,2.5vw,2.1rem)}h3{margin:0 0 10px;font-size:1.05rem}
-p,li,td{color:var(--muted)}.hero p{max-width:800px;font-size:1.08rem}.buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}button{border:0;border-radius:12px;padding:12px 16px;font:inherit;font-weight:800;cursor:pointer}.primary{background:var(--accent);color:#041314}.secondary{background:#12283a;color:var(--text);border:1px solid var(--line)}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}.metric{padding:15px;border-radius:14px;background:rgba(15,36,54,.9);border:1px solid var(--line)}.metric small{display:block;color:var(--muted)}.metric strong{font-size:1.2rem}
-section{margin-top:30px;scroll-margin-top:20px}.head{margin-bottom:14px}.head p{margin:4px 0 0}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}.card{grid-column:span 6;padding:21px;break-inside:avoid}.full{grid-column:1/-1}.third{grid-column:span 4}.twothird{grid-column:span 8}.statement{border-left:3px solid var(--accent);padding-left:14px;color:var(--text);font-size:1.08rem}
-ul.clean{list-style:none;padding:0;margin:0}ul.clean li{position:relative;padding-left:20px;margin:7px 0}ul.clean li:before{content:"•";position:absolute;left:4px;color:var(--accent)}
-.tag{display:inline-block;padding:5px 9px;border-radius:999px;margin:3px;background:rgba(67,216,200,.1);border:1px solid rgba(67,216,200,.25);color:var(--accent);font-size:.77rem;font-weight:750}
-.road{display:grid;gap:10px}.roaditem{display:grid;grid-template-columns:90px 1fr auto;gap:12px;align-items:center;padding:13px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.02)}.roaditem strong{color:var(--accent)}.pill{padding:5px 9px;border-radius:999px;font-size:.76rem;font-weight:800}.now{color:var(--good);background:rgba(79,212,129,.12)}.next{color:var(--warn);background:rgba(242,199,92,.12)}.later{color:#94c9ff;background:rgba(75,165,255,.12)}
-.checklist{display:grid;gap:9px}.check{display:flex;gap:10px;padding:11px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02)}.check input{accent-color:var(--accent);margin-top:5px}.check small{display:block;color:var(--muted)}
-table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line)}th{color:var(--accent);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
-footer{text-align:center;color:var(--muted);font-size:.82rem;margin-top:36px}
-@media(max-width:900px){.layout{grid-template-columns:1fr}aside{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--line)}nav{display:flex;overflow:auto}.card,.third,.twothird{grid-column:1/-1}.metrics{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){main{padding:18px 12px 50px}.hero{padding:26px 19px}.metrics{grid-template-columns:1fr}.roaditem{grid-template-columns:1fr}}
-@page{size:A4;margin:14mm}@media print{body{background:#fff;color:#111;font-size:10.5pt}.layout{display:block}aside,.buttons{display:none}main{padding:0}.hero,.card{background:#fff;color:#111;border-color:#ccd7df;box-shadow:none}.hero{background:#f3f8fa}p,li,td{color:#4b5563}.grid{gap:9px}.card,.third,.twothird{grid-column:1/-1}.metrics{grid-template-columns:repeat(4,1fr)}input{display:none}.check:before{content:"☐";margin-right:5px}}
+:root{
+  --bg:#07090f;--bg2:#0b0f19;--surface:rgba(255,255,255,.055);--surface-2:rgba(255,255,255,.085);
+  --text:#f5f7fb;--muted:#9ba6b5;--line:rgba(255,255,255,.11);--lime:#c7ff4a;--cyan:#64e9ff;
+  --violet:#9d7bff;--coral:#ff8d76;--gold:#ffd36a;--green:#57e39b;--shadow:0 30px 80px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 85%);z-index:-2}
+body:after{content:"";position:fixed;inset:-20%;pointer-events:none;background:radial-gradient(circle at 18% 10%,rgba(157,123,255,.18),transparent 28%),radial-gradient(circle at 82% 18%,rgba(100,233,255,.14),transparent 25%),radial-gradient(circle at 50% 85%,rgba(199,255,74,.08),transparent 30%);filter:blur(24px);z-index:-3}
+a{color:inherit}.shell{display:grid;grid-template-columns:88px minmax(0,1fr);min-height:100vh}
+.rail{position:sticky;top:0;height:100vh;border-right:1px solid var(--line);background:rgba(7,9,15,.72);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;padding:18px 12px;z-index:20}
+.logo{width:52px;height:52px;border-radius:18px;display:grid;place-items:center;background:conic-gradient(from 210deg,var(--lime),var(--cyan),var(--violet),var(--lime));color:#090b10;font-weight:950;letter-spacing:-.06em;box-shadow:0 10px 35px rgba(100,233,255,.18)}
+.rail nav{display:grid;gap:10px;margin:auto 0}.rail a{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;text-decoration:none;color:var(--muted);border:1px solid transparent;transition:.25s ease;position:relative}.rail a:hover,.rail a.active{color:var(--text);background:var(--surface);border-color:var(--line);transform:translateY(-2px)}
+.rail a span{position:absolute;left:62px;padding:7px 10px;border-radius:9px;background:#141925;border:1px solid var(--line);font-size:.75rem;white-space:nowrap;opacity:0;pointer-events:none;transform:translateX(-6px);transition:.2s}.rail a:hover span{opacity:1;transform:none}
+.rail svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7}.rail-bottom{display:grid;gap:10px}.icon-btn{width:48px;height:48px;border-radius:16px;border:1px solid var(--line);background:var(--surface);color:var(--text);display:grid;place-items:center;cursor:pointer}
+main{min-width:0;padding:0 clamp(18px,4vw,64px) 90px}.topbar{height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px}.kicker{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800}.pulse{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(199,255,74,.5);animation:pulse 2s infinite}@keyframes pulse{70%{box-shadow:0 0 0 10px transparent}}
+.top-actions{display:flex;gap:10px}.btn{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:11px 15px;border-radius:14px;font:inherit;font-weight:800;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);background:var(--surface-2)}.btn.primary{background:var(--lime);color:#0a0c10;border-color:transparent}
+.hero{min-height:calc(100vh - 108px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr);gap:40px;align-items:center;padding:28px 0 70px;position:relative}
+.hero-copy{position:relative;z-index:2}.hero-label{display:inline-flex;align-items:center;gap:9px;padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.11em}
+.hero h1{font-size:clamp(4rem,8vw,8.7rem);line-height:.82;letter-spacing:-.08em;margin:28px 0 24px;max-width:950px}.hero h1 .outline{color:transparent;-webkit-text-stroke:1.2px rgba(255,255,255,.45)}.hero h1 .accent{color:var(--lime)}
+.hero p{font-size:clamp(1.05rem,1.7vw,1.35rem);color:var(--muted);max-width:690px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.orbit-stage{position:relative;min-height:570px;display:grid;place-items:center}.orb{width:min(34vw,390px);aspect-ratio:1;border-radius:50%;position:relative;background:radial-gradient(circle at 34% 28%,#fff 0 2%,#c8fff1 3%,#59d9ff 15%,#7e6cff 42%,#171c2b 72%);box-shadow:inset -55px -55px 90px rgba(0,0,0,.45),0 0 120px rgba(100,233,255,.18);animation:float 7s ease-in-out infinite}.orb:after{content:"";position:absolute;inset:12%;border-radius:50%;border:1px solid rgba(255,255,255,.35);filter:blur(.2px)}@keyframes float{50%{transform:translateY(-15px) rotate(2deg)}}
+.ring{position:absolute;border:1px solid rgba(255,255,255,.16);border-radius:50%;transform:rotateX(68deg) rotateZ(-18deg)}.ring.r1{width:520px;height:260px}.ring.r2{width:620px;height:310px;opacity:.5}.orbit-card{position:absolute;min-width:180px;padding:15px 16px;border-radius:18px;background:rgba(13,17,28,.72);border:1px solid var(--line);backdrop-filter:blur(18px);box-shadow:var(--shadow)}.orbit-card small{display:block;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em}.orbit-card strong{font-size:1.18rem}.oc1{left:0;top:20%}.oc2{right:-10px;top:27%}.oc3{left:13%;bottom:10%}.oc4{right:4%;bottom:14%}
+.section{padding:95px 0;scroll-margin-top:30px}.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,480px);gap:40px;align-items:end;margin-bottom:34px}.section-no{font-size:.78rem;color:var(--lime);letter-spacing:.16em;text-transform:uppercase;font-weight:900}.section h2{font-size:clamp(2.5rem,5vw,5.5rem);line-height:.92;letter-spacing:-.065em;margin:12px 0}.section-head p{color:var(--muted);font-size:1.05rem}
+.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}.card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:26px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.035));padding:26px;box-shadow:0 20px 50px rgba(0,0,0,.18);transition:.28s ease}.card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.2);background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.04))}.card:before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-110px;bottom:-140px;background:radial-gradient(circle,var(--glow,rgba(100,233,255,.18)),transparent 70%)}.span4{grid-column:span 4}.span5{grid-column:span 5}.span6{grid-column:span 6}.span7{grid-column:span 7}.span8{grid-column:span 8}.span12{grid-column:1/-1}.tall{min-height:340px}.card .eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);font-weight:850}.card h3{font-size:clamp(1.35rem,2vw,2rem);line-height:1.05;letter-spacing:-.04em;margin:18px 0 12px}.card p,.card li{color:var(--muted)}
+.quote{font-size:clamp(1.45rem,2.5vw,2.6rem);line-height:1.18;letter-spacing:-.035em;color:var(--text)!important;max-width:760px}.quote em{color:var(--lime);font-style:normal}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.chip{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);font-size:.8rem;color:#cbd3de}
+.persona{display:flex;align-items:center;gap:14px;margin:20px 0}.avatar{width:58px;height:58px;border-radius:20px;background:linear-gradient(135deg,var(--violet),var(--cyan));display:grid;place-items:center;color:#0a0d13;font-weight:950}.persona strong{display:block}.persona small{color:var(--muted)}
+.product-stack{display:grid;gap:12px;margin-top:22px}.tier{padding:15px;border-radius:17px;border:1px solid var(--line);background:rgba(255,255,255,.035);display:grid;grid-template-columns:auto 1fr auto;gap:13px;align-items:center}.tier-index{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:rgba(199,255,74,.12);color:var(--lime);font-weight:900}.tier small{color:var(--muted)}.price{font-weight:900}
+.timeline{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:20px}.timeline:before{content:"";position:absolute;left:5%;right:5%;top:25px;height:1px;background:linear-gradient(90deg,var(--lime),var(--cyan),var(--violet),rgba(255,255,255,.12))}.milestone{position:relative;padding-top:52px}.dot{position:absolute;top:13px;left:12px;width:25px;height:25px;border-radius:50%;background:#0d111b;border:6px solid var(--lime);box-shadow:0 0 0 5px rgba(199,255,74,.1)}.milestone:nth-child(2) .dot{border-color:var(--cyan)}.milestone:nth-child(3) .dot{border-color:var(--violet)}.milestone:nth-child(4) .dot{border-color:var(--coral)}.milestone:nth-child(5) .dot{border-color:var(--gold)}.milestone h4{margin:0 0 5px}.milestone p{font-size:.87rem;margin:0}.status{display:inline-block;margin-top:9px;padding:5px 8px;border-radius:999px;font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.06)}
+.sprint-grid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:18px}.checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.task{display:flex;gap:12px;padding:17px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid var(--line);cursor:pointer;transition:.2s}.task:hover{background:rgba(255,255,255,.06)}.task input{width:19px;height:19px;accent-color:var(--lime);margin-top:3px}.task strong{display:block}.task small{color:var(--muted)}
+.progress-card{display:flex;flex-direction:column;justify-content:space-between;min-height:100%}.progress-ring{width:190px;aspect-ratio:1;border-radius:50%;margin:18px auto;display:grid;place-items:center;background:conic-gradient(var(--lime) calc(var(--progress)*1%),rgba(255,255,255,.08) 0);position:relative}.progress-ring:after{content:"";position:absolute;inset:15px;border-radius:50%;background:#10141e}.progress-ring strong{position:relative;z-index:1;font-size:2.2rem}.progress-ring span{position:relative;z-index:1;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em}.progress-copy{text-align:center}.progress-copy p{margin:4px 0}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.price-card{padding:24px;border:1px solid var(--line);border-radius:24px;background:var(--surface);position:relative;overflow:hidden}.price-card.featured{background:linear-gradient(145deg,rgba(199,255,74,.16),rgba(100,233,255,.08));border-color:rgba(199,255,74,.4);transform:translateY(-8px)}.price-card .amount{font-size:2.5rem;letter-spacing:-.06em;font-weight:950;margin:16px 0}.price-card ul{padding-left:18px;color:var(--muted)}.badge{display:inline-block;padding:6px 9px;border-radius:999px;background:var(--lime);color:#0b0e12;font-size:.7rem;font-weight:950;text-transform:uppercase;letter-spacing:.08em}
+.launch-path{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.launch-step{min-height:290px}.launch-step .num{font-size:5rem;font-weight:950;letter-spacing:-.08em;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.3)}
+.footer{padding:70px 0 20px}.footer-inner{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.85rem}
+.reveal{opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.7,.2,1)}.reveal.show{opacity:1;transform:none}
+@media(max-width:1100px){.hero{grid-template-columns:1fr}.orbit-stage{min-height:460px}.orb{width:320px}.oc1{left:8%}.oc2{right:8%}.section-head{grid-template-columns:1fr}.span4,.span5,.span6,.span7,.span8{grid-column:span 6}.pricing-grid{grid-template-columns:repeat(2,1fr)}.timeline{grid-template-columns:1fr}.timeline:before{left:24px;top:0;bottom:0;width:1px;height:auto}.milestone{padding:0 0 20px 58px}.dot{left:12px;top:0}}
+@media(max-width:760px){.shell{grid-template-columns:1fr}.rail{position:fixed;left:12px;right:12px;bottom:12px;top:auto;height:68px;border:1px solid var(--line);border-radius:22px;flex-direction:row;justify-content:space-between;padding:8px 10px}.logo{width:46px;height:46px}.rail nav{display:flex;margin:0;overflow:auto}.rail a{width:44px;height:44px}.rail a span,.rail-bottom{display:none}main{padding:0 18px 110px}.topbar{height:74px}.hero{min-height:auto;padding:30px 0 70px}.hero h1{font-size:clamp(3.7rem,18vw,6rem)}.orbit-stage{min-height:390px}.orb{width:240px}.ring.r1{width:360px;height:180px}.ring.r2{width:430px;height:215px}.orbit-card{min-width:140px;padding:11px}.oc1{left:0}.oc2{right:0}.oc3{left:0}.oc4{right:0}.section{padding:68px 0}.span4,.span5,.span6,.span7,.span8,.span12{grid-column:1/-1}.sprint-grid{grid-template-columns:1fr}.checklist{grid-template-columns:1fr}.pricing-grid,.launch-path{grid-template-columns:1fr}.price-card.featured{transform:none}.top-actions .btn.secondary{display:none}.footer-inner{flex-direction:column}}
+@page{size:A4;margin:14mm}@media print{body{background:#fff;color:#111}.rail,.topbar,.hero-actions,.orbit-stage{display:none}.shell{display:block}main{padding:0}.hero{min-height:auto;padding:20px 0}.hero h1{font-size:34pt;color:#111}.hero h1 .outline{-webkit-text-stroke:0;color:#111}.hero p,.card p,.card li,.section-head p{color:#4b5563}.section{padding:24px 0}.card,.price-card{background:#fff;border-color:#d5dbe2;box-shadow:none;break-inside:avoid}.reveal{opacity:1;transform:none}.bento,.pricing-grid,.launch-path{display:block}.card,.price-card,.launch-step{margin-bottom:10px}.checklist{display:block}.task{margin-bottom:8px}.progress-ring{background:#eee}.progress-ring:after{background:#fff}.footer{padding-top:20px}}
 </style>
 </head>
 <body>
-<div class="layout">
-<aside>
-<div class="brand"><div class="logo">FC</div><div><strong>Financial Command Center</strong><small>Founder Roadmap</small></div></div>
-<nav>
-<a href="#overview">Overview</a><a href="#vision">Vision</a><a href="#customer">Customer</a><a href="#product">Product</a><a href="#roadmap">Roadmap</a><a href="#sprint">Sprint 1</a><a href="#brand">Brand</a><a href="#pricing">Pricing</a><a href="#launch">Launch</a><a href="#operations">Operations</a>
-</nav>
-</aside>
-<main>
-<section class="hero" id="overview">
-<span class="eyebrow">Personal company roadmap</span>
-<h1>Your financial life.<br>One command center.</h1>
-<p>Financial Command Center is a premium financial operating system for households managing complex finances, international transitions, investments, taxes, goals, and major life decisions.</p>
-<div class="buttons"><button class="primary" id="pdf">Save as PDF</button><button class="secondary" id="toggle">Mark Sprint Complete</button></div>
-<div class="metrics"><div class="metric"><small>Current milestone</small><strong>Public Demo</strong></div><div class="metric"><small>Initial market</small><strong>Global Households</strong></div><div class="metric"><small>Main offer</small><strong>Pro — $119</strong></div><div class="metric"><small>Validation target</small><strong>10 Paid Users</strong></div></div>
-</section>
+<div class="shell">
+  <aside class="rail">
+    <div class="logo">FC</div>
+    <nav aria-label="Roadmap navigation">
+      <a href="#home" class="active" aria-label="Home"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V21H3z"/></svg><span>Home</span></a>
+      <a href="#vision" aria-label="Vision"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2"/></svg><span>Vision</span></a>
+      <a href="#product" aria-label="Product"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span>Product</span></a>
+      <a href="#roadmap" aria-label="Roadmap"><svg viewBox="0 0 24 24"><path d="M4 19V5m0 0h9l-2 3 2 3H4"/><path d="M8 19h12"/></svg><span>Roadmap</span></a>
+      <a href="#sprint" aria-label="Sprint"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span>Sprint</span></a>
+      <a href="#pricing" aria-label="Pricing"><svg viewBox="0 0 24 24"><path d="M12 3v18M7 7.5C7 5.6 9 4 12 4s5 1.5 5 3.5-2 3-5 3-5 1.2-5 3.5 2 4 5 4 5-1.5 5-3.5"/></svg><span>Pricing</span></a>
+      <a href="#launch" aria-label="Launch"><svg viewBox="0 0 24 24"><path d="M14 4c3 0 5 2 6 5l-8 8-5-5 7-8Z"/><path d="m7 12-3 1-1 4 4-1m5 1 1 4 4-1 1-3"/></svg><span>Launch</span></a>
+    </nav>
+    <div class="rail-bottom"><button class="icon-btn" id="printBtn" aria-label="Save as PDF"><svg viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18h12v3H6z"/><path d="M5 9h14a2 2 0 0 1 2 2v6h-3v-3H6v3H3v-6a2 2 0 0 1 2-2Z"/></svg></button></div>
+  </aside>
 
-<section id="vision"><div class="head"><h2>Vision & Mission</h2><p>The permanent reason the company exists.</p></div>
-<div class="grid"><article class="card"><h3>Vision</h3><p class="statement">Become the clearest and most trusted command center for people managing modern, complicated financial lives.</p></article>
-<article class="card"><h3>Mission</h3><p class="statement">Give households a beautiful, private, and intelligent way to understand their money, prepare for change, and make better decisions without juggling disconnected apps and spreadsheets.</p></article>
-<article class="card full"><h3>Product principle</h3><p class="statement">We are not selling another budget tracker. We are building a financial operating system that turns scattered information into clarity, priorities, and action.</p></article></div></section>
+  <main>
+    <div class="topbar">
+      <div class="kicker"><span class="pulse"></span> Founder operating system · live roadmap</div>
+      <div class="top-actions"><button class="btn secondary" id="resetBtn">Reset sprint</button><button class="btn primary" id="printTop">Export PDF</button></div>
+    </div>
 
-<section id="customer"><div class="head"><h2>Ideal Customer</h2><p>People whose financial lives have outgrown ordinary budgeting apps.</p></div>
-<div class="grid"><article class="card twothird"><h3>Primary persona: The Global Household</h3><ul class="clean"><li>Age 35–55 with household income generally above $120,000.</li><li>Multiple accounts, investments, reserves, and tax obligations.</li><li>May relocate internationally, work remotely, or manage more than one currency.</li><li>Values polished software, privacy, organization, and decision support.</li></ul></article>
-<article class="card third"><h3>Core jobs</h3><span class="tag">See everything</span><span class="tag">Know what changed</span><span class="tag">Prepare for taxes</span><span class="tag">Track reserves</span><span class="tag">Plan transitions</span><span class="tag">Make decisions</span></article>
-<article class="card full"><h3>Secondary markets</h3><p>FIRE households, freelancers, veterans, relocating families, investors, and financially organized households that need more than transaction categorization.</p></article></div></section>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="hero-label">Private founder roadmap · 2026</span>
+        <h1>Build the <span class="outline">future</span><br>of <span class="accent">financial clarity.</span></h1>
+        <p>Financial Command Center is evolving from a personal dashboard into a premium financial operating system for households with complex lives, ambitious goals, and no patience for scattered information.</p>
+        <div class="hero-actions"><a href="#sprint" class="btn primary" style="text-decoration:none">Enter current sprint</a><a href="#roadmap" class="btn" style="text-decoration:none">View master roadmap</a></div>
+      </div>
+      <div class="orbit-stage" aria-hidden="true">
+        <div class="ring r2"></div><div class="ring r1"></div><div class="orb"></div>
+        <div class="orbit-card oc1"><small>Current mission</small><strong>Public Demo</strong></div>
+        <div class="orbit-card oc2"><small>Validation goal</small><strong>10 paid users</strong></div>
+        <div class="orbit-card oc3"><small>Core market</small><strong>Global households</strong></div>
+        <div class="orbit-card oc4"><small>Main offer</small><strong>Pro · $119</strong></div>
+      </div>
+    </section>
 
-<section id="product"><div class="head"><h2>Product Architecture</h2><p>One shared engine supporting focused editions.</p></div>
-<div class="grid"><article class="card third"><h3>Starter</h3><ul class="clean"><li>Net worth</li><li>Cash flow</li><li>Emergency reserve</li><li>Goals</li><li>Monthly review</li></ul></article>
-<article class="card third"><h3>Pro</h3><ul class="clean"><li>Tax reserve</li><li>Investments</li><li>Scenario planning</li><li>Review triggers</li><li>Copilot compatibility</li></ul></article>
-<article class="card third"><h3>Global Edition</h3><ul class="clean"><li>Multi-currency</li><li>Relocation planning</li><li>Residency tracking</li><li>International obligations</li><li>Major Life Transition mode</li></ul></article></div></section>
+    <section class="section reveal" id="vision">
+      <div class="section-head"><div><div class="section-no">01 · North Star</div><h2>Why this exists.</h2></div><p>Every feature, sprint, and release should serve one idea: turn complicated financial lives into calm, clear decisions.</p></div>
+      <div class="bento">
+        <article class="card span7 tall" style="--glow:rgba(199,255,74,.18)"><div class="eyebrow">Vision</div><h3 class="quote">Become the clearest and most trusted <em>command center</em> for people managing modern, complicated financial lives.</h3></article>
+        <article class="card span5 tall" style="--glow:rgba(157,123,255,.22)"><div class="eyebrow">Mission</div><h3>Make confidence visible.</h3><p>Give households a beautiful, private, and intelligent way to understand their money, prepare for change, and make better decisions without juggling disconnected apps and spreadsheets.</p><div class="chips"><span class="chip">Private</span><span class="chip">Intelligent</span><span class="chip">Calm</span><span class="chip">Actionable</span></div></article>
+        <article class="card span12" style="--glow:rgba(100,233,255,.16)"><div class="eyebrow">Product principle</div><p class="quote">We are not selling another budget tracker. We are building a <em>financial operating system</em> that turns scattered information into clarity, priorities, and action.</p></article>
+      </div>
+    </section>
 
-<section id="roadmap"><div class="head"><h2>Release Roadmap</h2><p>Every release is tied to a business outcome.</p></div>
-<article class="card full"><div class="road">
-<div class="roaditem"><strong>1.0 Demo</strong><span>Safe fictional public demo that strangers can explore.</span><span class="pill now">Now</span></div>
-<div class="roaditem"><strong>1.1 Beta</strong><span>Onboarding, setup guidance, themes, documentation, and testers.</span><span class="pill next">Next</span></div>
-<div class="roaditem"><strong>1.2 Launch</strong><span>Checkout, licensing, customer portal, and first paid customers.</span><span class="pill later">Later</span></div>
-<div class="roaditem"><strong>1.3 Growth</strong><span>AI premium, referrals, analytics, and creator partnerships.</span><span class="pill later">Later</span></div>
-<div class="roaditem"><strong>2.0 Editions</strong><span>FIRE, Freelancer, Veteran, and professional editions.</span><span class="pill later">Later</span></div>
-</div></article></section>
+    <section class="section reveal" id="customer">
+      <div class="section-head"><div><div class="section-no">02 · Customer</div><h2>Built for lives that outgrew budgeting apps.</h2></div><p>The first customer is financially organized, digitally fluent, and managing enough complexity that generic tools now create more friction than clarity.</p></div>
+      <div class="bento">
+        <article class="card span5 tall" style="--glow:rgba(157,123,255,.2)"><div class="eyebrow">Primary persona</div><div class="persona"><div class="avatar">GH</div><div><strong>The Global Household</strong><small>Age 35–55 · $120k+ income</small></div></div><p>Multiple accounts. Investments. Tax obligations. International transitions. Remote income. More than one currency. They value privacy, organization, and software that respects their intelligence.</p></article>
+        <article class="card span7 tall" style="--glow:rgba(100,233,255,.18)"><div class="eyebrow">Jobs to be done</div><h3>What they are really hiring the product to do.</h3><div class="chips"><span class="chip">See the whole picture</span><span class="chip">Know what changed</span><span class="chip">Prepare for taxes</span><span class="chip">Protect reserves</span><span class="chip">Plan transitions</span><span class="chip">Test scenarios</span><span class="chip">Make the next decision</span></div></article>
+        <article class="card span12"><div class="eyebrow">Expansion markets</div><h3>FIRE households · freelancers · veterans · relocating families · investors · professionals</h3><p>One shared engine, multiple editions. The company expands by solving adjacent forms of financial complexity without diluting the core product.</p></article>
+      </div>
+    </section>
 
-<section id="sprint"><div class="head"><h2>Sprint 1 — Public Demo</h2><p>A stranger understands the value in under two minutes and sees no personal or production data.</p></div>
-<div class="grid"><article class="card twothird"><h3>Build Checklist</h3><div class="checklist" id="checks">
-<div class="check"><input type="checkbox"><label>Isolated Demo Mode<small>No production Supabase, authentication, or customer data access.</small></label></div>
-<div class="check"><input type="checkbox"><label>Fictional Household Dataset<small>Believable and internally consistent financial story.</small></label></div>
-<div class="check"><input type="checkbox"><label>Product Branding<small>Financial Command Center — Global Household Edition.</small></label></div>
-<div class="check"><input type="checkbox"><label>Demo Workspace Banner<small>Clearly states that all data is fictional.</small></label></div>
-<div class="check"><input type="checkbox"><label>Demo AI Experience<small>Prompts and answers based only on demo data.</small></label></div>
-<div class="check"><input type="checkbox"><label>Populated Charts and History<small>No empty or placeholder states.</small></label></div>
-<div class="check"><input type="checkbox"><label>Reset Demo<small>Restores all original fictional data.</small></label></div>
-<div class="check"><input type="checkbox"><label>Mobile Review<small>Navigation, cards, charts, and controls work on phones.</small></label></div>
-<div class="check"><input type="checkbox"><label>QA and Privacy Gate<small>Full scan and release checklist pass.</small></label></div>
-</div></article>
-<article class="card third"><h3>Definition of Done</h3><ul class="clean"><li>No personal names or balances.</li><li>No production database access.</li><li>No credentials in browser payloads.</li><li>Reset works reliably.</li><li>Mobile is usable.</li><li>AI reads only fictional snapshots.</li><li>Beta users understand the value.</li></ul></article></div></section>
+    <section class="section reveal" id="product">
+      <div class="section-head"><div><div class="section-no">03 · Product system</div><h2>One engine. Multiple ways to win.</h2></div><p>The product ladder creates a clear entry point, a powerful core offer, and a differentiated niche edition with room for services and recurring revenue.</p></div>
+      <div class="bento">
+        <article class="card span4 tall" style="--glow:rgba(255,211,106,.16)"><div class="eyebrow">Starter</div><h3>Clarity without friction.</h3><div class="product-stack"><div class="tier"><span class="tier-index">01</span><div><strong>Core tracking</strong><small>Net worth · cash flow · goals</small></div><span class="price">$59</span></div><div class="tier"><span class="tier-index">02</span><div><strong>Monthly review</strong><small>Reserves · progress · priorities</small></div><span>→</span></div></div></article>
+        <article class="card span4 tall" style="--glow:rgba(199,255,74,.18)"><div class="eyebrow">Pro · flagship</div><h3>The complete command center.</h3><div class="product-stack"><div class="tier"><span class="tier-index">01</span><div><strong>Advanced planning</strong><small>Tax · investments · scenarios</small></div><span class="price">$119</span></div><div class="tier"><span class="tier-index">02</span><div><strong>Decision support</strong><small>Triggers · reviews · Copilot</small></div><span>→</span></div></div></article>
+        <article class="card span4 tall" style="--glow:rgba(100,233,255,.18)"><div class="eyebrow">Global Edition</div><h3>Money does not stop at the border.</h3><div class="product-stack"><div class="tier"><span class="tier-index">01</span><div><strong>International life</strong><small>Currency · residency · relocation</small></div><span class="price">$169</span></div><div class="tier"><span class="tier-index">02</span><div><strong>Transition mode</strong><small>Documents · obligations · runway</small></div><span>→</span></div></div></article>
+      </div>
+    </section>
 
-<section id="brand"><div class="head"><h2>Brand Direction</h2><p>Premium, calm, intelligent, and more mission control than spreadsheet.</p></div>
-<div class="grid"><article class="card"><h3>Identity</h3><ul class="clean"><li><strong>Name:</strong> Financial Command Center</li><li><strong>Tagline:</strong> Your financial life. One command center.</li><li><strong>Category:</strong> The operating system for your financial life.</li></ul></article>
-<article class="card"><h3>Design language</h3><ul class="clean"><li>Dark glass interface with restrained teal accents.</li><li>Strong hierarchy and generous spacing.</li><li>Command, Minimal, and Coastal Global themes.</li><li>Accessible contrast and large touch targets.</li></ul></article>
-<article class="card full"><h3>Voice</h3><p>Clear, intelligent, calm, encouraging, and practical. Never alarmist, judgmental, or falsely certain.</p></article></div></section>
+    <section class="section reveal" id="roadmap">
+      <div class="section-head"><div><div class="section-no">04 · Master roadmap</div><h2>From personal tool to product company.</h2></div><p>Each release is defined by a business outcome. Features are only valuable when they move validation, conversion, retention, trust, or revenue.</p></div>
+      <article class="card span12" style="--glow:rgba(157,123,255,.14)">
+        <div class="timeline">
+          <div class="milestone"><span class="dot"></span><h4>1.0 · Demo</h4><p>A safe, fictional, public experience.</p><span class="status">Now</span></div>
+          <div class="milestone"><span class="dot"></span><h4>1.1 · Beta</h4><p>Onboarding, themes, docs, testers.</p><span class="status">Next</span></div>
+          <div class="milestone"><span class="dot"></span><h4>1.2 · Launch</h4><p>Checkout, licensing, first customers.</p><span class="status">Revenue</span></div>
+          <div class="milestone"><span class="dot"></span><h4>1.3 · Growth</h4><p>AI premium, referrals, analytics.</p><span class="status">Scale</span></div>
+          <div class="milestone"><span class="dot"></span><h4>2.0 · Editions</h4><p>FIRE, freelancer, veteran, pro.</p><span class="status">Expansion</span></div>
+        </div>
+      </article>
+    </section>
 
-<section id="pricing"><div class="head"><h2>Pricing Strategy</h2><p>A clear ladder from entry product to recurring and high-margin offers.</p></div>
-<article class="card full"><table><thead><tr><th>Offer</th><th>Price</th><th>Purpose</th></tr></thead><tbody>
-<tr><td>Financial Health Snapshot</td><td>Free</td><td>Email capture and product education.</td></tr>
-<tr><td>Starter</td><td>$59</td><td>Core household tracking.</td></tr>
-<tr><td>Pro</td><td>$119</td><td>Main product with taxes, investments, scenarios, and reviews.</td></tr>
-<tr><td>Global Edition</td><td>$169</td><td>Specialized international-household edition.</td></tr>
-<tr><td>Concierge Setup</td><td>$399</td><td>High-margin onboarding and configuration.</td></tr>
-<tr><td>Custom Build</td><td>$900–$2,500+</td><td>Controlled-scope customization.</td></tr>
-<tr><td>AI Plus</td><td>$12/month</td><td>Future recurring Copilot plan.</td></tr>
-</tbody></table></article></section>
+    <section class="section reveal" id="sprint">
+      <div class="section-head"><div><div class="section-no">05 · Current sprint</div><h2>Public Demo.</h2></div><p>Success means a stranger understands the value in under two minutes, sees no personal data, and wants their own version.</p></div>
+      <div class="sprint-grid">
+        <article class="card"><div class="eyebrow">Sprint 01 · Build checklist</div><div class="checklist" id="checks">
+          <label class="task"><input type="checkbox" data-key="isolation"><span><strong>Isolated Demo Mode</strong><small>No production Supabase or real customer access.</small></span></label>
+          <label class="task"><input type="checkbox" data-key="dataset"><span><strong>Fictional Household Dataset</strong><small>Believable and internally consistent story.</small></span></label>
+          <label class="task"><input type="checkbox" data-key="branding"><span><strong>Product Branding</strong><small>Financial Command Center · Global Edition.</small></span></label>
+          <label class="task"><input type="checkbox" data-key="banner"><span><strong>Demo Workspace Banner</strong><small>Every visitor knows the data is fictional.</small></span></label>
+          <label class="task"><input type="checkbox" data-key="ai"><span><strong>Demo AI Experience</strong><small>Prompts and answers use demo data only.</small></span></label>
+          <label class="task"><input type="checkbox" data-key="charts"><span><strong>Populated Charts</strong><small>No empty, generic, or placeholder states.</small></span></label>
+          <label class="task"><input type="checkbox" data-key="reset"><span><strong>Reset Demo</strong><small>One action restores the original state.</small></span></label>
+          <label class="task"><input type="checkbox" data-key="mobile"><span><strong>Mobile Review</strong><small>Everything feels intentional on a phone.</small></span></label>
+          <label class="task"><input type="checkbox" data-key="qa"><span><strong>QA & Privacy Gate</strong><small>Full scan and release checklist pass.</small></span></label>
+        </div></article>
+        <aside class="card progress-card" style="--glow:rgba(199,255,74,.18)"><div><div class="eyebrow">Live completion</div><div class="progress-ring" id="progressRing" style="--progress:0"><div class="progress-copy"><strong id="progressValue">0%</strong><span>complete</span></div></div></div><div><h3 id="progressTitle">Mission initialized.</h3><p id="progressText">Complete the first task to move the product toward beta.</p></div></aside>
+      </div>
+    </section>
 
-<section id="launch"><div class="head"><h2>Launch Plan</h2><p>The shortest responsible path to a first paying customer.</p></div>
-<div class="grid"><article class="card third"><h3>Validate</h3><ul class="clean"><li>Recruit 10–20 beta testers.</li><li>Observe first-use behavior.</li><li>Identify confusion and objections.</li><li>Test willingness to pay.</li></ul></article>
-<article class="card third"><h3>Sell</h3><ul class="clean"><li>Own marketing website.</li><li>Lemon Squeezy checkout.</li><li>Simplified Etsy edition.</li><li>Founding-customer pricing.</li></ul></article>
-<article class="card third"><h3>Grow</h3><ul class="clean"><li>Short product demos.</li><li>Creator affiliates.</li><li>Email education sequence.</li><li>AI subscription upsell.</li></ul></article>
-<article class="card full"><h3>Validation goal</h3><p class="statement">Prove that 10 people who do not personally know the founder will pay at least $79 for the product or a founding edition.</p></article></div></section>
+    <section class="section reveal" id="pricing">
+      <div class="section-head"><div><div class="section-no">06 · Revenue model</div><h2>Simple offers. Clear upgrade path.</h2></div><p>The early business combines digital-product leverage with high-margin services while recurring AI revenue develops later.</p></div>
+      <div class="pricing-grid">
+        <article class="price-card"><div class="eyebrow">Entry</div><h3>Starter</h3><div class="amount">$59</div><ul><li>Core dashboard</li><li>Net worth and reserves</li><li>Goals and reviews</li></ul></article>
+        <article class="price-card featured"><span class="badge">Primary offer</span><h3>Pro</h3><div class="amount">$119</div><ul><li>Tax and investments</li><li>Scenario planning</li><li>Review triggers</li><li>Copilot-ready</li></ul></article>
+        <article class="price-card"><div class="eyebrow">Specialized</div><h3>Global</h3><div class="amount">$169</div><ul><li>Multi-currency</li><li>Relocation planning</li><li>International obligations</li></ul></article>
+        <article class="price-card"><div class="eyebrow">Service</div><h3>Concierge</h3><div class="amount">$399</div><ul><li>Installation</li><li>Configuration</li><li>Onboarding session</li></ul></article>
+      </div>
+    </section>
 
-<section id="operations"><div class="head"><h2>Operating Playbook</h2><p>How the founder, repository, and background agents work together.</p></div>
-<div class="grid"><article class="card"><h3>Weekly rhythm</h3><ul class="clean"><li>PM agent proposes priorities.</li><li>Founder approves scope.</li><li>Work happens on branches.</li><li>QA & Privacy gates changes.</li><li>Only the founder merges and deploys.</li></ul></article>
-<article class="card"><h3>Decision filter</h3><p class="statement">Every proposed feature must improve conversion, onboarding, retention, trust, or revenue. Otherwise, it waits.</p></article></div></section>
-<footer>Financial Command Center — Founder Roadmap · July 2026</footer>
-</main>
+    <section class="section reveal" id="launch">
+      <div class="section-head"><div><div class="section-no">07 · Go to market</div><h2>Build. Prove. Sell.</h2></div><p>The goal is not a giant launch. The goal is undeniable evidence that strangers understand the product and will pay for it.</p></div>
+      <div class="launch-path">
+        <article class="card launch-step" style="--glow:rgba(157,123,255,.18)"><div class="num">01</div><h3>Validate</h3><p>Recruit 10–20 beta users, watch them use the demo, identify confusion, and test willingness to pay.</p></article>
+        <article class="card launch-step" style="--glow:rgba(100,233,255,.18)"><div class="num">02</div><h3>Sell</h3><p>Launch a focused website, Lemon Squeezy checkout, founding pricing, and a lower-friction starter offer.</p></article>
+        <article class="card launch-step" style="--glow:rgba(199,255,74,.18)"><div class="num">03</div><h3>Grow</h3><p>Use short demos, creator affiliates, customer stories, email education, and future AI subscriptions.</p></article>
+      </div>
+      <article class="card span12" style="margin-top:16px;--glow:rgba(255,141,118,.16)"><div class="eyebrow">Proof milestone</div><p class="quote">Ten people who do not personally know the founder pay at least <em>$79</em> for the product or founding edition.</p></article>
+    </section>
+
+    <footer class="footer"><div class="footer-inner"><span>Financial Command Center · Founder Roadmap</span><span>Build only what improves conversion, onboarding, trust, retention, or revenue.</span></div></footer>
+  </main>
 </div>
 <script>
-const checks=[...document.querySelectorAll('#checks input')];
-document.getElementById('pdf').addEventListener('click',()=>window.print());
-document.getElementById('toggle').addEventListener('click',e=>{const all=checks.every(x=>x.checked);checks.forEach(x=>x.checked=!all);e.target.textContent=all?'Mark Sprint Complete':'Clear Sprint Checklist'});
+const tasks=[...document.querySelectorAll('#checks input')];
+const ring=document.getElementById('progressRing');
+const value=document.getElementById('progressValue');
+const title=document.getElementById('progressTitle');
+const text=document.getElementById('progressText');
+const messages=[
+  ['Mission initialized.','Complete the first task to move the product toward beta.'],
+  ['Momentum started.','The foundation is moving. Keep the scope brutally clear.'],
+  ['System taking shape.','You now have enough progress to test the experience, not just the idea.'],
+  ['Demo becoming real.','The gap between personal project and public product is closing.'],
+  ['Beta within reach.','Polish the final risks, then put it in front of strangers.'],
+  ['Sprint complete.','The public demo is ready for human validation.']
+];
+function updateProgress(){
+  const done=tasks.filter(t=>t.checked).length;
+  const pct=Math.round(done/tasks.length*100);
+  ring.style.setProperty('--progress',pct);value.textContent=pct+'%';
+  const idx=pct===100?5:Math.min(4,Math.floor(pct/20));title.textContent=messages[idx][0];text.textContent=messages[idx][1];
+  tasks.forEach(t=>localStorage.setItem('fcc-roadmap-'+t.dataset.key,t.checked?'1':'0'));
+}
+tasks.forEach(t=>{t.checked=localStorage.getItem('fcc-roadmap-'+t.dataset.key)==='1';t.addEventListener('change',updateProgress)});updateProgress();
+document.getElementById('resetBtn').addEventListener('click',()=>{tasks.forEach(t=>t.checked=false);updateProgress()});
+document.getElementById('printBtn').addEventListener('click',()=>window.print());document.getElementById('printTop').addEventListener('click',()=>window.print());
+const reveal=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>reveal.observe(el));
+const sections=[...document.querySelectorAll('main section[id]')],links=[...document.querySelectorAll('.rail nav a')];
+const spy=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-35% 0px -55% 0px'});sections.forEach(s=>spy.observe(s));
 </script>
 </body>
 </html>

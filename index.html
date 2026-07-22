@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Financial Command Center — Founder Roadmap</title>
+<style>
+:root{--bg:#07111d;--panel:#0d1d2d;--panel2:#11283c;--text:#edf7ff;--muted:#9fb4c7;--line:#234057;--accent:#43d8c8;--blue:#4ba5ff;--good:#4fd481;--warn:#f2c75c;--r:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 15% 0,rgba(67,216,200,.15),transparent 28%),linear-gradient(180deg,#07111d,#091625);color:var(--text);font:16px/1.55 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+.layout{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+aside{position:sticky;top:0;height:100vh;padding:24px 18px;background:rgba(4,12,21,.86);border-right:1px solid var(--line);backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:24px}.logo{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;font-weight:900;color:#031316;background:linear-gradient(135deg,var(--accent),var(--blue))}
+.brand small{display:block;color:var(--muted)}nav{display:grid;gap:5px}nav a{color:var(--muted);text-decoration:none;padding:9px 10px;border-radius:10px}nav a:hover{background:#10263a;color:var(--text)}
+main{padding:34px clamp(18px,4vw,56px) 70px;min-width:0}.hero,.card{border:1px solid var(--line);background:rgba(13,29,45,.9);border-radius:var(--r)}
+.hero{padding:clamp(28px,5vw,54px);background:linear-gradient(145deg,rgba(19,47,69,.95),rgba(9,24,39,.96))}
+.eyebrow{color:var(--accent);font-size:.76rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}h1{font-size:clamp(2.4rem,5vw,4.8rem);line-height:.98;letter-spacing:-.05em;margin:14px 0}h2{margin:0;font-size:clamp(1.45rem,2.5vw,2.1rem)}h3{margin:0 0 10px;font-size:1.05rem}
+p,li,td{color:var(--muted)}.hero p{max-width:800px;font-size:1.08rem}.buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}button{border:0;border-radius:12px;padding:12px 16px;font:inherit;font-weight:800;cursor:pointer}.primary{background:var(--accent);color:#041314}.secondary{background:#12283a;color:var(--text);border:1px solid var(--line)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}.metric{padding:15px;border-radius:14px;background:rgba(15,36,54,.9);border:1px solid var(--line)}.metric small{display:block;color:var(--muted)}.metric strong{font-size:1.2rem}
+section{margin-top:30px;scroll-margin-top:20px}.head{margin-bottom:14px}.head p{margin:4px 0 0}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}.card{grid-column:span 6;padding:21px;break-inside:avoid}.full{grid-column:1/-1}.third{grid-column:span 4}.twothird{grid-column:span 8}.statement{border-left:3px solid var(--accent);padding-left:14px;color:var(--text);font-size:1.08rem}
+ul.clean{list-style:none;padding:0;margin:0}ul.clean li{position:relative;padding-left:20px;margin:7px 0}ul.clean li:before{content:"•";position:absolute;left:4px;color:var(--accent)}
+.tag{display:inline-block;padding:5px 9px;border-radius:999px;margin:3px;background:rgba(67,216,200,.1);border:1px solid rgba(67,216,200,.25);color:var(--accent);font-size:.77rem;font-weight:750}
+.road{display:grid;gap:10px}.roaditem{display:grid;grid-template-columns:90px 1fr auto;gap:12px;align-items:center;padding:13px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.02)}.roaditem strong{color:var(--accent)}.pill{padding:5px 9px;border-radius:999px;font-size:.76rem;font-weight:800}.now{color:var(--good);background:rgba(79,212,129,.12)}.next{color:var(--warn);background:rgba(242,199,92,.12)}.later{color:#94c9ff;background:rgba(75,165,255,.12)}
+.checklist{display:grid;gap:9px}.check{display:flex;gap:10px;padding:11px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02)}.check input{accent-color:var(--accent);margin-top:5px}.check small{display:block;color:var(--muted)}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line)}th{color:var(--accent);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+footer{text-align:center;color:var(--muted);font-size:.82rem;margin-top:36px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}aside{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--line)}nav{display:flex;overflow:auto}.card,.third,.twothird{grid-column:1/-1}.metrics{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){main{padding:18px 12px 50px}.hero{padding:26px 19px}.metrics{grid-template-columns:1fr}.roaditem{grid-template-columns:1fr}}
+@page{size:A4;margin:14mm}@media print{body{background:#fff;color:#111;font-size:10.5pt}.layout{display:block}aside,.buttons{display:none}main{padding:0}.hero,.card{background:#fff;color:#111;border-color:#ccd7df;box-shadow:none}.hero{background:#f3f8fa}p,li,td{color:#4b5563}.grid{gap:9px}.card,.third,.twothird{grid-column:1/-1}.metrics{grid-template-columns:repeat(4,1fr)}input{display:none}.check:before{content:"☐";margin-right:5px}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>
+<div class="brand"><div class="logo">FC</div><div><strong>Financial Command Center</strong><small>Founder Roadmap</small></div></div>
+<nav>
+<a href="#overview">Overview</a><a href="#vision">Vision</a><a href="#customer">Customer</a><a href="#product">Product</a><a href="#roadmap">Roadmap</a><a href="#sprint">Sprint 1</a><a href="#brand">Brand</a><a href="#pricing">Pricing</a><a href="#launch">Launch</a><a href="#operations">Operations</a>
+</nav>
+</aside>
+<main>
+<section class="hero" id="overview">
+<span class="eyebrow">Personal company roadmap</span>
+<h1>Your financial life.<br>One command center.</h1>
+<p>Financial Command Center is a premium financial operating system for households managing complex finances, international transitions, investments, taxes, goals, and major life decisions.</p>
+<div class="buttons"><button class="primary" id="pdf">Save as PDF</button><button class="secondary" id="toggle">Mark Sprint Complete</button></div>
+<div class="metrics"><div class="metric"><small>Current milestone</small><strong>Public Demo</strong></div><div class="metric"><small>Initial market</small><strong>Global Households</strong></div><div class="metric"><small>Main offer</small><strong>Pro — $119</strong></div><div class="metric"><small>Validation target</small><strong>10 Paid Users</strong></div></div>
+</section>
+
+<section id="vision"><div class="head"><h2>Vision & Mission</h2><p>The permanent reason the company exists.</p></div>
+<div class="grid"><article class="card"><h3>Vision</h3><p class="statement">Become the clearest and most trusted command center for people managing modern, complicated financial lives.</p></article>
+<article class="card"><h3>Mission</h3><p class="statement">Give households a beautiful, private, and intelligent way to understand their money, prepare for change, and make better decisions without juggling disconnected apps and spreadsheets.</p></article>
+<article class="card full"><h3>Product principle</h3><p class="statement">We are not selling another budget tracker. We are building a financial operating system that turns scattered information into clarity, priorities, and action.</p></article></div></section>
+
+<section id="customer"><div class="head"><h2>Ideal Customer</h2><p>People whose financial lives have outgrown ordinary budgeting apps.</p></div>
+<div class="grid"><article class="card twothird"><h3>Primary persona: The Global Household</h3><ul class="clean"><li>Age 35–55 with household income generally above $120,000.</li><li>Multiple accounts, investments, reserves, and tax obligations.</li><li>May relocate internationally, work remotely, or manage more than one currency.</li><li>Values polished software, privacy, organization, and decision support.</li></ul></article>
+<article class="card third"><h3>Core jobs</h3><span class="tag">See everything</span><span class="tag">Know what changed</span><span class="tag">Prepare for taxes</span><span class="tag">Track reserves</span><span class="tag">Plan transitions</span><span class="tag">Make decisions</span></article>
+<article class="card full"><h3>Secondary markets</h3><p>FIRE households, freelancers, veterans, relocating families, investors, and financially organized households that need more than transaction categorization.</p></article></div></section>
+
+<section id="product"><div class="head"><h2>Product Architecture</h2><p>One shared engine supporting focused editions.</p></div>
+<div class="grid"><article class="card third"><h3>Starter</h3><ul class="clean"><li>Net worth</li><li>Cash flow</li><li>Emergency reserve</li><li>Goals</li><li>Monthly review</li></ul></article>
+<article class="card third"><h3>Pro</h3><ul class="clean"><li>Tax reserve</li><li>Investments</li><li>Scenario planning</li><li>Review triggers</li><li>Copilot compatibility</li></ul></article>
+<article class="card third"><h3>Global Edition</h3><ul class="clean"><li>Multi-currency</li><li>Relocation planning</li><li>Residency tracking</li><li>International obligations</li><li>Major Life Transition mode</li></ul></article></div></section>
+
+<section id="roadmap"><div class="head"><h2>Release Roadmap</h2><p>Every release is tied to a business outcome.</p></div>
+<article class="card full"><div class="road">
+<div class="roaditem"><strong>1.0 Demo</strong><span>Safe fictional public demo that strangers can explore.</span><span class="pill now">Now</span></div>
+<div class="roaditem"><strong>1.1 Beta</strong><span>Onboarding, setup guidance, themes, documentation, and testers.</span><span class="pill next">Next</span></div>
+<div class="roaditem"><strong>1.2 Launch</strong><span>Checkout, licensing, customer portal, and first paid customers.</span><span class="pill later">Later</span></div>
+<div class="roaditem"><strong>1.3 Growth</strong><span>AI premium, referrals, analytics, and creator partnerships.</span><span class="pill later">Later</span></div>
+<div class="roaditem"><strong>2.0 Editions</strong><span>FIRE, Freelancer, Veteran, and professional editions.</span><span class="pill later">Later</span></div>
+</div></article></section>
+
+<section id="sprint"><div class="head"><h2>Sprint 1 — Public Demo</h2><p>A stranger understands the value in under two minutes and sees no personal or production data.</p></div>
+<div class="grid"><article class="card twothird"><h3>Build Checklist</h3><div class="checklist" id="checks">
+<div class="check"><input type="checkbox"><label>Isolated Demo Mode<small>No production Supabase, authentication, or customer data access.</small></label></div>
+<div class="check"><input type="checkbox"><label>Fictional Household Dataset<small>Believable and internally consistent financial story.</small></label></div>
+<div class="check"><input type="checkbox"><label>Product Branding<small>Financial Command Center — Global Household Edition.</small></label></div>
+<div class="check"><input type="checkbox"><label>Demo Workspace Banner<small>Clearly states that all data is fictional.</small></label></div>
+<div class="check"><input type="checkbox"><label>Demo AI Experience<small>Prompts and answers based only on demo data.</small></label></div>
+<div class="check"><input type="checkbox"><label>Populated Charts and History<small>No empty or placeholder states.</small></label></div>
+<div class="check"><input type="checkbox"><label>Reset Demo<small>Restores all original fictional data.</small></label></div>
+<div class="check"><input type="checkbox"><label>Mobile Review<small>Navigation, cards, charts, and controls work on phones.</small></label></div>
+<div class="check"><input type="checkbox"><label>QA and Privacy Gate<small>Full scan and release checklist pass.</small></label></div>
+</div></article>
+<article class="card third"><h3>Definition of Done</h3><ul class="clean"><li>No personal names or balances.</li><li>No production database access.</li><li>No credentials in browser payloads.</li><li>Reset works reliably.</li><li>Mobile is usable.</li><li>AI reads only fictional snapshots.</li><li>Beta users understand the value.</li></ul></article></div></section>
+
+<section id="brand"><div class="head"><h2>Brand Direction</h2><p>Premium, calm, intelligent, and more mission control than spreadsheet.</p></div>
+<div class="grid"><article class="card"><h3>Identity</h3><ul class="clean"><li><strong>Name:</strong> Financial Command Center</li><li><strong>Tagline:</strong> Your financial life. One command center.</li><li><strong>Category:</strong> The operating system for your financial life.</li></ul></article>
+<article class="card"><h3>Design language</h3><ul class="clean"><li>Dark glass interface with restrained teal accents.</li><li>Strong hierarchy and generous spacing.</li><li>Command, Minimal, and Coastal Global themes.</li><li>Accessible contrast and large touch targets.</li></ul></article>
+<article class="card full"><h3>Voice</h3><p>Clear, intelligent, calm, encouraging, and practical. Never alarmist, judgmental, or falsely certain.</p></article></div></section>
+
+<section id="pricing"><div class="head"><h2>Pricing Strategy</h2><p>A clear ladder from entry product to recurring and high-margin offers.</p></div>
+<article class="card full"><table><thead><tr><th>Offer</th><th>Price</th><th>Purpose</th></tr></thead><tbody>
+<tr><td>Financial Health Snapshot</td><td>Free</td><td>Email capture and product education.</td></tr>
+<tr><td>Starter</td><td>$59</td><td>Core household tracking.</td></tr>
+<tr><td>Pro</td><td>$119</td><td>Main product with taxes, investments, scenarios, and reviews.</td></tr>
+<tr><td>Global Edition</td><td>$169</td><td>Specialized international-household edition.</td></tr>
+<tr><td>Concierge Setup</td><td>$399</td><td>High-margin onboarding and configuration.</td></tr>
+<tr><td>Custom Build</td><td>$900–$2,500+</td><td>Controlled-scope customization.</td></tr>
+<tr><td>AI Plus</td><td>$12/month</td><td>Future recurring Copilot plan.</td></tr>
+</tbody></table></article></section>
+
+<section id="launch"><div class="head"><h2>Launch Plan</h2><p>The shortest responsible path to a first paying customer.</p></div>
+<div class="grid"><article class="card third"><h3>Validate</h3><ul class="clean"><li>Recruit 10–20 beta testers.</li><li>Observe first-use behavior.</li><li>Identify confusion and objections.</li><li>Test willingness to pay.</li></ul></article>
+<article class="card third"><h3>Sell</h3><ul class="clean"><li>Own marketing website.</li><li>Lemon Squeezy checkout.</li><li>Simplified Etsy edition.</li><li>Founding-customer pricing.</li></ul></article>
+<article class="card third"><h3>Grow</h3><ul class="clean"><li>Short product demos.</li><li>Creator affiliates.</li><li>Email education sequence.</li><li>AI subscription upsell.</li></ul></article>
+<article class="card full"><h3>Validation goal</h3><p class="statement">Prove that 10 people who do not personally know the founder will pay at least $79 for the product or a founding edition.</p></article></div></section>
+
+<section id="operations"><div class="head"><h2>Operating Playbook</h2><p>How the founder, repository, and background agents work together.</p></div>
+<div class="grid"><article class="card"><h3>Weekly rhythm</h3><ul class="clean"><li>PM agent proposes priorities.</li><li>Founder approves scope.</li><li>Work happens on branches.</li><li>QA & Privacy gates changes.</li><li>Only the founder merges and deploys.</li></ul></article>
+<article class="card"><h3>Decision filter</h3><p class="statement">Every proposed feature must improve conversion, onboarding, retention, trust, or revenue. Otherwise, it waits.</p></article></div></section>
+<footer>Financial Command Center — Founder Roadmap · July 2026</footer>
+</main>
+</div>
+<script>
+const checks=[...document.querySelectorAll('#checks input')];
+document.getElementById('pdf').addEventListener('click',()=>window.print());
+document.getElementById('toggle').addEventListener('click',e=>{const all=checks.every(x=>x.checked);checks.forEach(x=>x.checked=!all);e.target.textContent=all?'Mark Sprint Complete':'Clear Sprint Checklist'});
+</script>
+</body>
+</html>
